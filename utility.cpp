@@ -41,42 +41,6 @@ void blinkSendConfirmation()
     rgbLed.turnOff();
 }
 
-void parseTwinMessage(DEVICE_TWIN_UPDATE_STATE updateState, const char *message)
-{
-    JSON_Value *root_value;
-    root_value = json_parse_string(message);
-    if (json_value_get_type(root_value) != JSONObject)
-    {
-        if (root_value != NULL)
-        {
-            json_value_free(root_value);
-        }
-        LogError("parse %s failed", message);
-        return;
-    }
-    JSON_Object *root_object = json_value_get_object(root_value);
-
-    double val = 0;
-    if (updateState == DEVICE_TWIN_UPDATE_COMPLETE)
-    {
-        JSON_Object *desired_object = json_object_get_object(root_object, "desired");
-        if (desired_object != NULL)
-        {
-            val = json_object_get_number(desired_object, "interval");
-        }
-    }
-    else
-    {
-        val = json_object_get_number(root_object, "interval");
-    }
-    if (val > 500)
-    {
-        interval = (int)val;
-        LogInfo(">>>Device twin updated: set interval to %d", interval);
-    }
-    json_value_free(root_value);
-}
-
 void SensorInit()
 {
     i2c = new DevI2C(D14, D15);
@@ -139,28 +103,20 @@ int getSoC(float voltage)
     return soc;
 }
 
-bool readMessage(int messageId, char *payload, float *temperatureValue, float *humidityValue, float *voltageValue, int *socValue)
+bool readMessage(char *payload, float *temperatureValue, float *humidityValue, float *voltageValue, int *socValue)
 {
     JSON_Value *root_value = json_value_init_object();
     JSON_Object *root_object = json_value_get_object(root_value);
     char *serialized_string = NULL;
 
-    json_object_set_number(root_object, "messageId", messageId);
-
     float t = readTemperature();
     float h = readHumidity();
     float v = readVoltage();
     int s = getSoC(v);
-    bool temperatureAlert = false;
 
     temperature = t;
     *temperatureValue = t;
     json_object_set_number(root_object, "temperature", temperature);
-
-    if(temperature > TEMPERATURE_ALERT)
-    {
-        temperatureAlert = true;
-    }
 
     humidity = h;
     *humidityValue = h;
@@ -179,7 +135,7 @@ bool readMessage(int messageId, char *payload, float *temperatureValue, float *h
     snprintf(payload, MESSAGE_MAX_LEN, "%s", serialized_string);
     json_free_serialized_string(serialized_string);
     json_value_free(root_value);
-    return temperatureAlert;
+    return true;
 }
 
 #if (DEVKIT_SDK_VERSION >= 10602)

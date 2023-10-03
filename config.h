@@ -2,8 +2,6 @@
 // Licensed under the MIT license. 
 
 // Interval time(ms) for sending message to IoT Hub
-#define INTERVAL 5000
+#define INTERVAL 60000
 
 #define MESSAGE_MAX_LEN 256
-
-#define TEMPERATURE_ALERT 40
