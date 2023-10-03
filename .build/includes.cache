@@ -16,11 +16,6 @@
   },
   {
     "Sourcefile": "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\.build\\sketch\\GetStarted.ino.cpp",
-    "Include": "DevKitMQTTClient.h",
-    "Includepath": "C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\2.0.0\\libraries\\AzureIoT\\src"
-  },
-  {
-    "Sourcefile": "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\.build\\sketch\\GetStarted.ino.cpp",
     "Include": "",
     "Includepath": ""
   },
@@ -28,6 +23,11 @@
     "Sourcefile": "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\.build\\sketch\\utility.cpp",
     "Include": "HTS221Sensor.h",
     "Includepath": "C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\2.0.0\\libraries\\Sensors\\src"
+  },
+  {
+    "Sourcefile": "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\.build\\sketch\\utility.cpp",
+    "Include": "AzureIotHub.h",
+    "Includepath": "C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\2.0.0\\libraries\\AzureIoT\\src"
   },
   {
     "Sourcefile": "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\.build\\sketch\\utility.cpp",
@@ -51,26 +51,6 @@
   },
   {
     "Sourcefile": "C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\2.0.0\\libraries\\WiFi\\src\\AZ3166WiFiUdp.cpp",
-    "Include": "",
-    "Includepath": ""
-  },
-  {
-    "Sourcefile": "C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\2.0.0\\libraries\\AzureIoT\\src\\AzureIotHub.cpp",
-    "Include": "",
-    "Includepath": ""
-  },
-  {
-    "Sourcefile": "C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\2.0.0\\libraries\\AzureIoT\\src\\DevKitMQTTClient.cpp",
-    "Include": "",
-    "Includepath": ""
-  },
-  {
-    "Sourcefile": "C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\2.0.0\\libraries\\AzureIoT\\src\\DevKitOTAUtils.cpp",
-    "Include": "",
-    "Includepath": ""
-  },
-  {
-    "Sourcefile": "C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\2.0.0\\libraries\\AzureIoT\\src\\DevkitDPSClient.cpp",
     "Include": "",
     "Includepath": ""
   },
@@ -121,6 +101,26 @@
   },
   {
     "Sourcefile": "C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\2.0.0\\libraries\\Sensors\\src\\utility\\LSM6DSL_acc_gyro_driver.c",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\2.0.0\\libraries\\AzureIoT\\src\\AzureIotHub.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\2.0.0\\libraries\\AzureIoT\\src\\DevKitMQTTClient.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\2.0.0\\libraries\\AzureIoT\\src\\DevKitOTAUtils.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\2.0.0\\libraries\\AzureIoT\\src\\DevkitDPSClient.cpp",
     "Include": "",
     "Includepath": ""
   }

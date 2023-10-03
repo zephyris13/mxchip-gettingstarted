@@ -5,19 +5,20 @@
 // To get started please visit https://microsoft.github.io/azure-iot-developer-kit/docs/projects/connect-iot-hub?utm_source=ArduinoExtension&utm_medium=ReleaseNote&utm_campaign=VSCode
 # 5 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino" 2
 # 6 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino" 2
+# 7 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino" 2
 
-# 8 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino" 2
 # 9 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino" 2
 # 10 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino" 2
+# 11 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino" 2
 
 static bool hasWifi = false;
-
-static uint64_t send_interval_ms;
 
 static int soc;
 static float voltage;
 static float temperature;
 static float humidity;
+
+WiFiServer server(8080);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Utilities
@@ -54,6 +55,42 @@ static void SendConfirmationCallback()
   Screen.print(3, line2);
 }
 
+static String JsonOutput()
+{
+    String jsonString = "{";
+
+    jsonString += "\"battv\":" + String(voltage) + ",";
+    jsonString += "\"humidity\":" + String(humidity) + ",";
+    jsonString += "\"temp\":" + String(temperature);
+
+    jsonString += "}";
+
+    return jsonString;
+}
+
+static void HandleRequest(WiFiClient client)
+{
+    char messagePayload[256];
+    bool success = readMessage(messagePayload, &temperature, &humidity, &voltage, &soc);
+
+    if (success)
+    {
+        while (client.connected())
+        {
+            if (client.available())
+            {
+                client.println(JsonOutput());
+            }
+
+            break;
+        }
+
+        delay(1000);
+        client.stop();
+        blinkSendConfirmation();
+    }
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Arduino sketch
 void setup()
@@ -77,35 +114,23 @@ void setup()
   Screen.print(3, " > Sensors");
   SensorInit();
 
-  send_interval_ms = SystemTickCounterRead();
+  server.begin();
+  do{{ (void)(0 && printf("Started")); { LOGGER_LOG l = xlogging_get_log_function(); if (l != 
+# 116 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino" 3 4
+ __null
+# 116 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
+ ) l(AZ_LOG_INFO, "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino", __func__, 116, 0x01, "Started"); } }; }while((void)0,0);
 }
 
 void loop()
 {
-  if (hasWifi)
-  {
-    if ((int)(SystemTickCounterRead() - send_interval_ms) >= getInterval())
+    if (hasWifi)
     {
-      // Send teperature data
-      char messagePayload[256];
-
-      bool success = readMessage(messagePayload, &temperature, &humidity, &voltage, &soc);
-
-      if (success)
-      {
-          char line[45];
-          sprintf(line, "V:%.2f S:%d T:%.2f H:%.2f", voltage, soc, temperature, humidity);
-
-          do{{ (void)(0 && printf(line)); { LOGGER_LOG l = xlogging_get_log_function(); if (l != 
-# 97 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino" 3 4
-         __null
-# 97 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
-         ) l(AZ_LOG_INFO, "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino", __func__, 97, 0x01, line); } }; }while((void)0,0);
-      }
-
-
-      send_interval_ms = SystemTickCounterRead();
+        WiFiClient client = server.available();
+        if (client)
+        {
+            blinkLED();
+            HandleRequest(client);
+        }
     }
-  }
-  delay(60000);
 }

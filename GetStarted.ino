@@ -2,7 +2,8 @@
 // Licensed under the MIT license. 
 // To get started please visit https://microsoft.github.io/azure-iot-developer-kit/docs/projects/connect-iot-hub?utm_source=ArduinoExtension&utm_medium=ReleaseNote&utm_campaign=VSCode
 #include "AZ3166WiFi.h"
-#include "DevKitMQTTClient.h"
+#include "AZ3166WiFiServer.h"
+#include "azure_c_shared_utility/xlogging.h"
 
 #include "config.h"
 #include "utility.h"
@@ -10,12 +11,12 @@
 
 static bool hasWifi = false;
 
-static uint64_t send_interval_ms;
-
 static int soc;
 static float voltage;
 static float temperature;
 static float humidity;
+
+WiFiServer server(8080);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Utilities
@@ -52,6 +53,42 @@ static void SendConfirmationCallback()
   Screen.print(3, line2);
 }
 
+static String JsonOutput()
+{
+    String jsonString = "{";
+
+    jsonString += "\"battv\":" + String(voltage) + ",";
+    jsonString += "\"humidity\":" + String(humidity) + ",";
+    jsonString += "\"temp\":" + String(temperature);
+
+    jsonString += "}";
+
+    return jsonString;
+}
+
+static void HandleRequest(WiFiClient client)
+{
+    char messagePayload[MESSAGE_MAX_LEN];
+    bool success = readMessage(messagePayload, &temperature, &humidity, &voltage, &soc);
+
+    if (success)
+    {
+        while (client.connected())
+        {
+            if (client.available())
+            {
+                client.println(JsonOutput());
+            }
+
+            break;
+        }
+
+        delay(1000);
+        client.stop();
+        blinkSendConfirmation();
+    }
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Arduino sketch
 void setup()
@@ -75,31 +112,19 @@ void setup()
   Screen.print(3, " > Sensors");
   SensorInit();
 
-  send_interval_ms = SystemTickCounterRead();
+  server.begin();
+  LogInfo("Started");
 }
 
 void loop()
 {
-  if (hasWifi)
-  {
-    if ((int)(SystemTickCounterRead() - send_interval_ms) >= getInterval())
+    if (hasWifi)
     {
-      // Send teperature data
-      char messagePayload[MESSAGE_MAX_LEN];
-
-      bool success = readMessage(messagePayload, &temperature, &humidity, &voltage, &soc);
-
-      if (success)
-      {
-          char line[45];
-          sprintf(line, "V:%.2f S:%d T:%.2f H:%.2f", voltage, soc, temperature, humidity);
-
-          LogInfo(line);
-      }
-
-       
-      send_interval_ms = SystemTickCounterRead();
+        WiFiClient client = server.available();
+        if (client)
+        {
+            blinkLED();
+            HandleRequest(client);
+        }
     }
-  }
-  delay(60000);
 }

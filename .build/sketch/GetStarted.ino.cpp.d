@@ -253,30 +253,11 @@ c:\Users\Shawn\Documents\IoTWorkbenchProjects\examples\devkit_getstarted\Device\
  C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\cores\arduino/Print.h \
  C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\libraries\WiFi\src/AZ3166WiFiServer.h \
  C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/mbed-os/features/netsocket/TCPServer.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\libraries\AzureIoT\src/DevKitMQTTClient.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\libraries\AzureIoT\src/AzureIotHub.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/iothub_client/inc/iothub_client.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/deps/umock-c/inc/umock_c/umock_c_prod.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/deps/azure-macro-utils-c/inc/azure_macro_utils/macro_utils.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/iothub_client/inc/iothub_transport_ll.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/iothub_client/inc/iothub_client_core_ll.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/iothub_client/inc/iothub_client_core_common.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/iothub_client/inc/iothub_message.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/c-utility/inc/azure_c_shared_utility/map.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/c-utility/inc/azure_c_shared_utility/strings.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/c-utility/inc/azure_c_shared_utility/strings_types.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/c-utility/inc/azure_c_shared_utility/crt_abstractions.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/iothub_client/inc/iothub_client_core.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/iothub_client/inc/iothub_client_ll.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/iothub_client/inc/iothub_message.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/c-utility/inc/azure_c_shared_utility/threadapi.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/c-utility/inc/azure_c_shared_utility/platform.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/c-utility/inc/azure_c_shared_utility/xio.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/c-utility/inc/azure_c_shared_utility/optionhandler.h \
+ C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\libraries\WiFi\src/AZ3166WiFiServer.h \
  C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/c-utility/inc/azure_c_shared_utility/xlogging.h \
+ C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/deps/azure-macro-utils-c/inc/azure_macro_utils/macro_utils.h \
  C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/c-utility/inc/azure_c_shared_utility/agenttime.h \
+ C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/deps/umock-c/inc/umock_c/umock_c_prod.h \
  C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/c-utility/inc/azure_c_shared_utility/optimize_size.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/iothub_client/inc/iothubtransportmqtt.h \
- C:\Users\Shawn\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\2.0.0\system/azure-iot-sdk-c/certs/certs.h \
  c:\Users\Shawn\Documents\IoTWorkbenchProjects\examples\devkit_getstarted\Device\.build\sketch\config.h \
  c:\Users\Shawn\Documents\IoTWorkbenchProjects\examples\devkit_getstarted\Device\.build\sketch\utility.h

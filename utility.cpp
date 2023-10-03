@@ -14,16 +14,10 @@ DevI2C *i2c;
 HTS221Sensor *sensor;
 static int voltageSensor;
 static RGB_LED rgbLed;
-static int interval = INTERVAL;
 static float humidity;
 static float temperature;
 static float voltage;
 static int soc;
-
-int getInterval()
-{
-    return interval;
-}
 
 void blinkLED()
 {
