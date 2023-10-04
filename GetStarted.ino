@@ -89,7 +89,7 @@ static void HandleRequest(WiFiClient client)
 
         delay(1000);
         client.stop();
-        blinkSendConfirmation();
+        SendConfirmationCallback();
     }
 }
 

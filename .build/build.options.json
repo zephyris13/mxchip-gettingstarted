@@ -1,7 +1,7 @@
 {
   "additionalFiles": "\\config.h,\\utility.cpp,\\utility.h",
   "builtInLibrariesFolders": "C:\\Program Files (x86)\\Arduino\\libraries",
-  "customBuildProperties": "build.path=c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\.build,build.warn_data_percentage=75,runtime.tools.openocd.path=C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\tools\\openocd\\0.10.0,runtime.tools.openocd-0.10.0.path=C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\tools\\openocd\\0.10.0,runtime.tools.arm-none-eabi-gcc.path=C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\tools\\arm-none-eabi-gcc\\5_4-2016q3,runtime.tools.arm-none-eabi-gcc-5_4-2016q3.path=C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\tools\\arm-none-eabi-gcc\\5_4-2016q3",
+  "customBuildProperties": "build.path=c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\.build,build.warn_data_percentage=75,runtime.tools.arm-none-eabi-gcc.path=C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\tools\\arm-none-eabi-gcc\\5_4-2016q3,runtime.tools.arm-none-eabi-gcc-5_4-2016q3.path=C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\tools\\arm-none-eabi-gcc\\5_4-2016q3,runtime.tools.openocd.path=C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\tools\\openocd\\0.10.0,runtime.tools.openocd-0.10.0.path=C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages\\AZ3166\\tools\\openocd\\0.10.0",
   "fqbn": "AZ3166:stm32f4:MXCHIP_AZ3166:upload_method=OpenOCDMethod",
   "hardwareFolders": "C:\\Program Files (x86)\\Arduino\\hardware,C:\\Users\\Shawn\\AppData\\Local\\Arduino15\\packages",
   "otherLibrariesFolders": "C:\\Users\\Shawn\\Documents\\Arduino\\libraries",

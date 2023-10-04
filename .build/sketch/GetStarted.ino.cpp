@@ -23,19 +23,6 @@ WiFiServer server(8080);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Utilities
-#line 23 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
-static void InitWifi();
-#line 41 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
-static void SendConfirmationCallback();
-#line 56 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
-static String JsonOutput();
-#line 69 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
-static void HandleRequest(WiFiClient client);
-#line 98 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
-void setup();
-#line 123 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
-void loop();
-#line 23 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
 static void InitWifi()
 {
   Screen.print(2, "Connecting...");
@@ -105,7 +92,7 @@ static void HandleRequest(WiFiClient client)
 
         delay(1000);
         client.stop();
-        blinkSendConfirmation();
+        SendConfirmationCallback();
     }
 }
 
