@@ -31,9 +31,9 @@ static void SendConfirmationCallback();
 static String JsonOutput();
 #line 69 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
 static void HandleRequest(WiFiClient client);
-#line 94 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
+#line 98 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
 void setup();
-#line 119 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
+#line 123 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
 void loop();
 #line 23 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
 static void InitWifi()
@@ -93,6 +93,10 @@ static void HandleRequest(WiFiClient client)
         {
             if (client.available())
             {
+                client.println("HTTP/1.1 200 OK");
+                client.println("Content-Type: application/json;charset=utf-8");
+                client.println("Connection: close");
+                client.println();
                 client.println(JsonOutput());
             }
 

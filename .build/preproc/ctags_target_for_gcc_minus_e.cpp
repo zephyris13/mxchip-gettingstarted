@@ -79,6 +79,10 @@ static void HandleRequest(WiFiClient client)
         {
             if (client.available())
             {
+                client.println("HTTP/1.1 200 OK");
+                client.println("Content-Type: application/json;charset=utf-8");
+                client.println("Connection: close");
+                client.println();
                 client.println(JsonOutput());
             }
 
@@ -116,10 +120,10 @@ void setup()
 
   server.begin();
   do{{ (void)(0 && printf("Started")); { LOGGER_LOG l = xlogging_get_log_function(); if (l != 
-# 116 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino" 3 4
+# 120 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino" 3 4
  __null
-# 116 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
- ) l(AZ_LOG_INFO, "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino", __func__, 116, 0x01, "Started"); } }; }while((void)0,0);
+# 120 "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino"
+ ) l(AZ_LOG_INFO, "c:\\Users\\Shawn\\Documents\\IoTWorkbenchProjects\\examples\\devkit_getstarted\\Device\\GetStarted.ino", __func__, 120, 0x01, "Started"); } }; }while((void)0,0);
 }
 
 void loop()

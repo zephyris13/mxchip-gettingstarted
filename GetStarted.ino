@@ -77,6 +77,10 @@ static void HandleRequest(WiFiClient client)
         {
             if (client.available())
             {
+                client.println("HTTP/1.1 200 OK");
+                client.println("Content-Type: application/json;charset=utf-8");
+                client.println("Connection: close");
+                client.println();
                 client.println(JsonOutput());
             }
 
